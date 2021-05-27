@@ -4,8 +4,15 @@ public class CheckingAccount {
     private double balance;
     private long accountNumber;
     private String accountHolder;
-    private String type = "checking";
+    private String type = "checking"; //default is checking, we can change if needed using setter
 
+    /**
+     * public void setAccountInfo(long accountNumber,String accountHolder, double balance,String type)
+     * 1) this.accountNumber = accountNumber;
+     * 2) setAccountNumber(accountNumber);
+     */
+
+    //right click > generate > Getter and Setter > Select all(shift+click last one) > Ok
     public double getBalance() {
         return balance;
     }
@@ -36,5 +43,15 @@ public class CheckingAccount {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "CheckingAccount{" +
+                "balance=" + balance +
+                ", accountNumber=" + accountNumber +
+                ", accountHolder='" + accountHolder + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
