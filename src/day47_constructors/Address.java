@@ -6,10 +6,28 @@ public class Address {
     private String state ;
     private String zipCode;
     private String country = "USA";
+    // constructor
+    public Address() {
+        System.out.println("Address constructor");
+        street = "123 unknown st";
+        city = "unknown";
+        state = "unknown";
+        zipCode ="00000";
+    }
 
+    public Address(String street, String city, String state, String zipCode) {
+        if(street.isEmpty() || street.length()>50){
+            System.out.println("ERROR: Invalid street");
+        }else {
+            this.street=street;
+        }
+
+        //setStreet(street);
+
+    }
 
     public String toString() {
-        return street + " , " + city + " , " + state + " , " + zipCode;
+        return street + " , " + city + " , " + state + "  " + zipCode;
     }
 
     public String getStreet() {
